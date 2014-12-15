@@ -1,0 +1,31 @@
+{% extends "layout.twig" %}
+{% block content %}<br><br>
+    <div id="content">
+        Usage:
+        <div>
+            Get books index:
+            http://{{ app.request.getHost() }}/api/book/index
+        </div>
+
+        <div>
+            Get category index:
+            http://{{ app.request.getHost() }}/api/categories
+        </div>
+
+        <div>
+            Get by book id:
+            http://{{ app.request.getHost() }}/api/book/id/{your_id}
+        </div>
+
+        <div>
+            Get by book ids:
+            http://{{ app.request.getHost() }}/api/books/{ids}
+            ids should be separated by "-"
+        </div>
+
+        <div>
+            Get by book ISBN:
+            http://{{ app.request.getHost() }}/api/book/isbn/{isbn}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+TestApp\Entity\Author:
+    author{1..10}:
+        name: <firstName()> <lastName()>
+        bio: <text()>
+
+TestApp\Entity\Book:  
+    book{1..20}:
+        category: <numberBetween(1, 2)>
+        pages_count: <numberBetween(0,500)>
+        title: <catchPhrase()>
+        annotation: <paragraph()>
+        cover: <imageUrl(640, 480, 'cats')>
+
+TestApp\Entity\BookIsbn:
+   book_isbn{1..20}: 
+       book_id: @book*->id
+       isbn: <ean13()>  

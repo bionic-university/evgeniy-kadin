@@ -1,0 +1,5 @@
+TestApp\Entity\Book:
+  properties:
+    id:
+      expose: true
+      groups: [preset]

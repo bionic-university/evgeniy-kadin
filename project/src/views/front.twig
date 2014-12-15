@@ -1,0 +1,55 @@
+{% extends "layout.twig" %}
+
+{% block content %}<br><br>
+    <div id="content">
+        <div id="books">
+        </div>
+        <script id="bookTemplate" type="text/template">
+            <img src="<%= cover %>" width="75px"/>
+            <ul>
+                <li><%= authors["name"] %></li>
+                <li><a href="#/books/<%= book_id %>"><%= title %></li>
+            </ul>
+        </script>
+
+        <script id="bookPresentationTemplate" type="text/template">
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title" id="myModalLabel"><%= authors["name"] %> - <%= title %></h4>
+                        </div>
+                        <div class="modal-body">
+                            <img src="<%= cover %>" width="300px" style="float:left"/>
+                            <div style="float:right">Category: <%= category.name %></div>
+                            <table style="margin-top:30px">
+                                <tr>
+                                    <td width="100px">ISBN</td>
+                                    <td><%= isbn[0] %></td>
+                                </tr>
+                                <tr>
+                                    <td width="100px">Pages count</td>
+                                    <td><%= pages_count %></td>
+                                </tr>
+                                <tr>
+                                    <td width="100px">Annotation</td>
+                                    <td><%= annotation %></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><a href="http://{{ app.request.getHost() }}/api/book/id/<%= id %>">JSON link </a></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </script>
+    </div>
+    <div id="popup"></div>
+{% endblock %}

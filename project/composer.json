@@ -1,0 +1,21 @@
+{
+	"minimum-stability": "dev",
+	"require": {
+		"php": ">=5.3.3",
+		"silex/silex": "1.*",
+		"taluu/doctrine-orm-provider": "1.0.*",
+        "symfony/serializer": "2.6.*",
+        "twig/twig": ">=1.8,<2.0-dev",
+        "fzaninotto/Faker":"*",
+        "jdesrosiers/silex-jms-serializer-provider": "~0.1",
+        "Amenophis/silex-crud":"*"
+    },
+    "autoload": {
+        "psr-0": { "BookApp": "src"}
+    },
+
+    "config": {
+		"bin-dir": "bin"
+	}
+}
+
